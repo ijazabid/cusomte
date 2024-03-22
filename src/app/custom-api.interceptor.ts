@@ -23,20 +23,20 @@ export class customApiInterceptor implements HttpInterceptor {
           console.log('Response Interceptor - Body:', event.body);
 
           
-          if (event.status === 200) {
+           event.status === 401; 
 
             // Manually set status to 401 to trigger logout event
-            const unauthorizedResponse = new HttpResponse({
-              status: 401,
-              statusText: 'Unauthorized'
+            // const unauthorizedResponse = new HttpResponse({
+            //   status: 401,
+            //   statusText: 'Unauthorized'
               // You can also include any other properties needed in the response
-            });
-            throw unauthorizedResponse;
+            // });
+            // throw unauthorizedResponse;
             
             // alert('Excellent');
             
            
-          } else if (event.status === 401 || event.status === 403) {
+            if (event.status === 401 || event.status === 403) {
             alert('Session timeout');
             this.logout();
           }
