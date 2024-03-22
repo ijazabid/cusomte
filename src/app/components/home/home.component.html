@@ -1,0 +1,9 @@
+
+
+<div *ngIf="responseData">
+    <h2>Response Data</h2>
+    <pre>{{ responseData | json }}</pre>
+</div>
+<div *ngIf="!responseData">
+    <p>Loading...</p>
+</div>
